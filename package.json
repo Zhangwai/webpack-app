@@ -1,0 +1,67 @@
+{
+  "name": "webpack-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack server --mode=development",
+    "build:dev": "webpack build --mode=development",
+    "build:prod": "webpack build --mode=production",
+    "build:dll": "webpack build --config ./webpack.dll.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@squoosh/lib": "^0.4.0",
+    "add-asset-html-webpack-plugin": "^5.0.1",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "core-js": "^3.21.1",
+    "css-loader": "^6.7.0",
+    "css-minimizer-webpack-plugin": "^3.4.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.25.4",
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "image-minimizer-webpack-plugin": "^3.2.3",
+    "imagemin": "^8.0.1",
+    "less-loader": "^10.2.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.4.2",
+    "style-loader": "^3.3.1",
+    "thread-loader": "^3.0.4",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-merge": "^5.8.0",
+    "workbox-webpack-plugin": "^6.5.1"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "sideEffects": [
+    "*.css",
+    "*.less"
+  ],
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "lodash": "^4.17.21"
+  }
+}
