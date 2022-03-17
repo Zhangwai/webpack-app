@@ -20,6 +20,10 @@ const addAssetHtmlWebpackPlugin = require("add-asset-html-webpack-plugin");
 // 图片压缩
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
+// 打包结果分析插件
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+
 // process.env.NODE_ENV = "development";
 console.log(process.env.NODE_ENV);
 
@@ -421,6 +425,12 @@ module.exports = {
       filepath: resolve("dll/lodash.js"),
       outputPath: "assets/js",
       publicPath: "assets/js",
+    }),
+    // 分析插件
+    new BundleAnalyzerPlugin({
+      analyzerMode: "server",
+      analyzerHost: "127.0.0.1",
+      analyzerPort: "8877",
     }),
   ],
 

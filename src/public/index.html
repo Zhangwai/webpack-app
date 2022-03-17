@@ -7,8 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+
   <body>
-    12ask大
+    <h2>3600端口</h2>
+    <button id="button">发送同源请求</button>
+    <button id="cross-button">发送跨域请求</button>
     <button id="btn">点击懒加载</button>
     <div id="content"></div>
     <div id="box1">1234445555666</div>
@@ -18,5 +21,28 @@
       alt=""
       style="width: 100%; height: 100%"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      console.log(123);
+      const btn = document.getElementById("button");
+      const croBtn = document.getElementById("cross-button");
+      axios.get("http://localhost:3600/login", {}).then((res) => {
+        console.log(res);
+      });
+      btn.onclick = () => {
+        axios.get("http://localhost:3600/user", {}).then((res) => {
+          console.log(res);
+        });
+      };
+      croBtn.onclick = () => {
+        axios({
+          url: "http://localhost:3601/otheruser",
+          withCredentials: true,
+          method: "get",
+        }).then((res) => {
+          console.log(res);
+        });
+      };
+    </script>
   </body>
 </html>
